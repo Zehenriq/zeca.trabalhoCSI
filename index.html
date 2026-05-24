@@ -11,7 +11,6 @@
     
     <style>
         :root {
-            /* Paleta de Cores Refinada */
             --bg-main: #f8fafc;
             --bg-body: #f1f5f9;
             --bg-card: #ffffff;
@@ -20,7 +19,6 @@
             --text-main: #0f172a;
             --text-muted: #475569;
             
-            /* Destaques Tecnológicos */
             --accent-purple: #7c3aed;
             --accent-cyan: #0891b2;
             --accent-green: #10b981;
@@ -42,7 +40,6 @@
             line-height: 1.6;
         }
 
-        /* O DETALHE NAS LATERAIS: Um fundo levemente acinzentado com padrão de linhas finas (Grid Tech) */
         body {
             display: flex;
             flex-direction: column;
@@ -57,7 +54,6 @@
             flex: 1 0 auto;
         }
 
-        /* Cabeçalho de Alto Impacto */
         header {
             background: var(--gradient-header);
             padding: 80px 20px;
@@ -97,25 +93,22 @@
             margin: 0 auto;
         }
 
-        /* Container Centralizado - Layout Limpo */
         .container {
             max-width: 1100px;
             margin: 50px auto;
             padding: 0 25px;
         }
 
-        /* Seções Flutuantes Elegantes */
         section {
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-top: 4px solid #cbd5e1; /* Detalhe sutil no topo do card */
+            border-top: 4px solid #cbd5e1;
             border-radius: 16px;
             padding: 45px;
             margin-bottom: 40px;
             box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.04), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
         }
 
-        /* Cores temáticas no topo de seções específicas */
         section#versoes { border-top-color: var(--accent-cyan); }
         section#vantagens { border-top-color: var(--accent-purple); }
 
@@ -158,7 +151,6 @@
             margin-bottom: 12px;
         }
 
-        /* Containers de Imagem Confortáveis */
         .image-container {
             text-align: center;
             margin: 35px 0;
@@ -183,7 +175,6 @@
             font-style: italic;
         }
 
-        /* Tabelas Limpas e Escaneáveis */
         .table-responsive {
             overflow-x: auto;
             margin: 35px 0;
@@ -227,7 +218,6 @@
             background: #f8fafc;
         }
 
-        /* Grid das Versões (Igual ao seu print, adaptado para fundo claro) */
         .grid-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -306,7 +296,6 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
 
-        /* Caixas de Alerta */
         .alert-box {
             display: flex;
             gap: 25px;
@@ -354,7 +343,6 @@
             border: 1px solid #e2e8f0;
         }
 
-        /* Grid de Vantagens (SEO) */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -373,12 +361,6 @@
             border-color: #cbd5e1;
         }
 
-
-        .feature-icon {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
-
         .feature-title {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 1.1rem;
@@ -387,7 +369,6 @@
             margin-bottom: 10px;
         }
 
-        /* Linha do Tempo Estilizada */
         .timeline {
             position: relative;
             margin: 40px 0 20px 10px;
@@ -432,44 +413,57 @@
             margin-bottom: 6px;
         }
 
-        /* Seção Integrantes de Grupo Pré-Footer */
+        /* ==========================================
+           CORREÇÃO CRÍTICA DO ALINHAMENTO DOS INTEGRANTES
+           ========================================== */
         .group-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;    /* Centraliza os filhos na horizontal */
+            justify-content: center;
             text-align: center;
             border-top: 1px solid var(--border-color);
-            padding-top: 30px;
-            margin-top: 50px;
+            padding-top: 35px;
+            margin: 50px auto 10px auto;
+            width: 100%;
+            max-width: 1000px;      /* Restringe área externa para evitar quebras tortas */
         }
 
         .group-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             color: var(--text-muted);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            width: 100%;
         }
 
         .student-list {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
+            justify-content: center; /* Centraliza itens internos se houver quebra de linha */
+            align-items: center;
+            gap: 16px;
             list-style: none;
             padding: 0;
+            margin: 0 auto;         /* Garante centralização perfeita da caixa da lista */
+            width: 100%;
         }
 
         .student-list li {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            padding: 8px 20px;
+            padding: 10px 22px;
             border-radius: 30px;
             font-size: 0.95rem;
             color: var(--text-main);
             font-weight: 500;
-            display: flex;
+            display: inline-flex;  /* Evita esticamentos fantasmas de bloco */
             align-items: center;
             gap: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            margin: 0;             /* Remove qualquer margin residual do reset */
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
         }
 
         .student-list li i {
@@ -481,14 +475,13 @@
             background: rgba(124, 58, 237, 0.08);
             color: var(--accent-purple);
             border: 1px solid rgba(124, 58, 237, 0.15);
-            padding: 4px 16px;
+            padding: 5px 18px;
             border-radius: 20px;
             font-weight: 600;
             font-size: 0.85rem;
-            margin-top: 20px;
+            margin: 25px auto 0 auto;
         }
 
-        /* Footer Clássico Limpo */
         footer {
             flex-shrink: 0;
             background-color: #0f172a;
@@ -522,10 +515,7 @@
 
         <section>
             <h2>1. Como Funciona o Protocolo HTTP?</h2>
-            <p>O <strong>HTTP</strong> (Hypertext Transfer Protocol) é um protocolo da Web que é uma das bases de como a Internet funciona. 
-                Quando você visita um site, o HTTP é usado para entregar o conteúdo dessa página, exibindo-a em seu navegador. O protocolo da Web, HTTP, 
-                é um protocolo de solicitação-resposta que define como os clientes da Web se comunicam com os servidores da Web.
-            </p>
+            <p>O <strong>HTTP</strong> (Hypertext Transfer Protocol) é o protocolo básico estrutural que permite a troca de dados nativa entre navegadores (clientes) e servidores na internet.</p>
             <div class="image-container">
                 <img src="https://lh4.googleusercontent.com/ECbQV5RNf6RMdJQ_qE-s-9JF9lYOSTyxCYq5nCrHgcBct8ixi__prSequxRFInCxyVojmotC91hoNvrNDwOihQ1YHM5tMW_MRmDtCjOVpMbikgdiv0vqIE1PmQu9xNEA0Ke-aYjHOJAL5ec00E-2g28" alt="HTTP vs HTTPS Comparativo de Segurança" class="web-image">
                 <div class="image-caption">Diagrama funcional: O ciclo básico de envio de requisições (Request) pelo cliente e o retorno do documento HTML (Response) processado pelo servidor.</div>
@@ -640,7 +630,7 @@
                 </div>
                 <div class="card">
                     <h4><i class="fa-solid fa-handshake" style="color: var(--accent-cyan);"></i> Conexão Instantânea (0-RTT)</h4>
-                    <p>O QUIC unifica as validações de transporte e criptografia (TLS) em um único passo. Usuários recorrentes conectam-se sem perda de tempo.</p>
+                    <p>O QUIC unifica as validações de transporte e criptografia (TLS) in um único passo. Usuários recorrentes conectam-se sem perda de tempo.</p>
                 </div>
                 <div class="card">
                     <h4><i class="fa-solid fa-mobile-screen-button" style="color: var(--accent-purple);"></i> Migração de Rede Fluida</h4>
@@ -683,7 +673,7 @@
         </section>
 
         <section id="vantagens">
-            <h2>5. Vantagens Estratégicas e SEO (Search Engine Optimization)</h2>
+            <h2>5. Vantagens Estratégicas e SEO</h2>
             <p>Independente do tipo de site, o HTTPS é hoje o padrão esperado por usuários, mecanismos de busca e navegadores modernos.</p>
             
             <div class="features-grid">

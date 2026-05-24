@@ -11,20 +11,21 @@
     
     <style>
         :root {
-            --bg-main: #f8fafc;
-            --bg-body: #f1f5f9;
-            --bg-card: #ffffff;
-            --border-color: rgba(15, 23, 42, 0.08);
+            /* Paleta Dark Refinada */
+            --bg-body: #030712;          /* Fundo ultra dark */
+            --bg-card: #0b1329;          /* Fundo dos cards (azul-escuro profundo) */
+            --border-color: rgba(255, 255, 255, 0.08);
             
-            --text-main: #0f172a;
-            --text-muted: #475569;
+            --text-main: #f8fafc;        /* Texto principal claro */
+            --text-muted: #94a3b8;       /* Texto secundário cinza-azulado */
             
-            --accent-purple: #7c3aed;
-            --accent-cyan: #0891b2;
-            --accent-green: #10b981;
-            --accent-red: #ef4444;
+            /* Destaques Neon / Tecnológicos */
+            --accent-purple: #a78bfa;
+            --accent-cyan: #22d3ee;
+            --accent-green: #34d399;
+            --accent-red: #f87171;
             
-            --gradient-header: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #2e1042 100%);
+            --gradient-header: linear-gradient(135deg, #030712 0%, #0f172a 50%, #1e152a 100%);
         }
 
         * {
@@ -40,13 +41,14 @@
             line-height: 1.6;
         }
 
+        /* O FUNDO DARK COMPLETO COM O TEXTURE GRID DO PRINT SEU */
         body {
             display: flex;
             flex-direction: column;
             background-color: var(--bg-body);
             background-image: 
-                linear-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
             background-size: 24px 24px;
         }
 
@@ -54,19 +56,20 @@
             flex: 1 0 auto;
         }
 
+        /* Cabeçalho Dark Integrado */
         header {
             background: var(--gradient-header);
             padding: 80px 20px;
             text-align: center;
             width: 100%;
-            border-bottom: 4px solid var(--accent-cyan);
-            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
         .header-badge {
             display: inline-block;
-            background: rgba(8, 145, 178, 0.15);
-            color: #22d3ee;
+            background: rgba(34, 211, 238, 0.1);
+            color: var(--accent-cyan);
             padding: 6px 16px;
             border-radius: 20px;
             font-size: 0.8rem;
@@ -74,7 +77,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 20px;
-            border: 1px solid rgba(8, 145, 178, 0.3);
+            border: 1px solid rgba(34, 211, 238, 0.2);
         }
 
         header h1 {
@@ -88,33 +91,36 @@
 
         header p {
             font-size: 1.15rem;
-            color: #cbd5e1;
+            color: var(--text-muted);
             max-width: 700px;
             margin: 0 auto;
         }
 
+        /* Container Centralizado */
         .container {
             max-width: 1100px;
             margin: 50px auto;
             padding: 0 25px;
         }
 
+        /* Seções Estilo Cards Premium Dark */
         section {
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-top: 4px solid #cbd5e1;
+            border-top: 4px solid #475569;
             border-radius: 16px;
             padding: 45px;
             margin-bottom: 40px;
-            box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.04), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
         }
 
+        /* Destaques no topo dos blocos */
         section#versoes { border-top-color: var(--accent-cyan); }
         section#vantagens { border-top-color: var(--accent-purple); }
 
         h2 {
             font-family: 'Space Grotesk', sans-serif;
-            color: #0f172a;
+            color: #ffffff;
             font-size: 1.8rem;
             margin-bottom: 25px;
             display: flex;
@@ -124,7 +130,7 @@
 
         h3 {
             font-family: 'Space Grotesk', sans-serif;
-            color: #1e293b;
+            color: #ffffff;
             margin: 40px 0 15px 0;
             font-size: 1.4rem;
         }
@@ -137,7 +143,8 @@
         }
 
         strong {
-            color: #0f172a;
+            color: #ffffff;
+            font-weight: 600;
         }
 
         ul, ol {
@@ -151,10 +158,11 @@
             margin-bottom: 12px;
         }
 
+        /* Containers de Imagem Dark */
         .image-container {
             text-align: center;
             margin: 35px 0;
-            background-color: #f8fafc;
+            background-color: rgba(15, 23, 42, 0.6);
             padding: 20px;
             border-radius: 12px;
             border: 1px solid var(--border-color);
@@ -167,6 +175,11 @@
             height: auto;
             margin: 0 auto 15px auto;
             border-radius: 8px;
+            opacity: 0.9; /* Suaviza imagens muito brancas no tema escuro */
+            transition: opacity 0.3s ease;
+        }
+        .web-image:hover {
+            opacity: 1;
         }
 
         .image-caption {
@@ -175,13 +188,13 @@
             font-style: italic;
         }
 
+        /* Tabelas Adaptadas ao Modo Escuro */
         .table-responsive {
             overflow-x: auto;
             margin: 35px 0;
             border-radius: 12px;
             border: 1px solid var(--border-color);
-            background: #ffffff;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.01);
+            background: #0f172a;
         }
 
         table {
@@ -196,15 +209,15 @@
         }
 
         th {
-            background-color: #f8fafc;
-            color: #0f172a;
+            background-color: #1e293b;
+            color: #ffffff;
             font-weight: 600;
             font-size: 0.9rem;
-            border-bottom: 2px solid #e2e8f0;
+            border-bottom: 2px solid var(--border-color);
         }
 
         td {
-            border-bottom: 1px solid #f1f5f9;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
             font-size: 0.98rem;
             color: var(--text-muted);
         }
@@ -214,10 +227,11 @@
         }
 
         tr:hover td {
-            color: #0f172a;
-            background: #f8fafc;
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.02);
         }
 
+        /* Grid das Versões (Igual ao seu print original) */
         .grid-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -230,15 +244,15 @@
             border: 1px solid var(--border-color);
             border-radius: 16px;
             padding: 30px;
-            background-color: #f8fafc;
+            background-color: rgba(15, 23, 42, 0.4);
             transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .card:hover {
             transform: translateY(-4px);
-            border-color: #cbd5e1;
-            background-color: #ffffff;
-            box-shadow: 0 12px 25px rgba(15, 23, 42, 0.06);
+            border-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(15, 23, 42, 0.8);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
         }
 
         .card-number {
@@ -247,6 +261,7 @@
             font-weight: 700;
             line-height: 1;
             margin-bottom: 10px;
+            opacity: 0.2; /* Toque fantasma elegante igual ao print */
         }
 
         .card-year {
@@ -262,15 +277,15 @@
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 15px;
-            color: #0f172a;
+            color: #ffffff;
         }
 
-        .card-http1 .card-number { color: #f97316; }
-        .card-http2 .card-number { color: var(--accent-cyan); }
-        .card-http3 .card-number { color: var(--accent-purple); }
+        .card-http1 .card-number { color: #f97316; opacity: 0.3; }
+        .card-http2 .card-number { color: var(--accent-cyan); opacity: 0.3; }
+        .card-http3 .card-number { color: var(--accent-purple); opacity: 0.3; }
 
         .card h4 {
-            color: #0f172a;
+            color: #ffffff;
             font-size: 1.15rem;
             margin-bottom: 12px;
             display: flex;
@@ -286,16 +301,16 @@
         }
 
         .tag {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
+            background: #1e293b;
+            border: 1px solid var(--border-color);
             padding: 4px 12px;
             border-radius: 20px;
             font-size: 0.75rem;
             color: var(--text-muted);
             font-weight: 500;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
 
+        /* Caixas de Alerta Customizadas para o Tema Escuro */
         .alert-box {
             display: flex;
             gap: 25px;
@@ -309,8 +324,8 @@
             border: 1px solid var(--border-color);
         }
 
-        .alert-danger { border-left: 4px solid var(--accent-red); background: #fef2f2; }
-        .alert-success { border-left: 4px solid var(--accent-green); background: #f0fdf4; }
+        .alert-danger { border-left: 4px solid var(--accent-red); background: rgba(239, 68, 68, 0.08); }
+        .alert-success { border-left: 4px solid var(--accent-green); background: rgba(16, 185, 129, 0.08); }
 
         .alert h4 {
             margin-bottom: 12px;
@@ -318,31 +333,32 @@
             align-items: center;
             gap: 8px;
         }
-        .alert-danger h4 { color: #991b1b; }
-        .alert-danger p { color: #7f1d1d; font-size: 0.95rem; }
-        .alert-success h4 { color: #166534; }
-        .alert-success p { color: #14532d; font-size: 0.95rem; }
+        .alert-danger h4 { color: var(--accent-red); }
+        .alert-danger p { color: #fca5a5; font-size: 0.95rem; }
+        .alert-success h4 { color: var(--accent-green); }
+        .alert-success p { color: #a7f3d0; font-size: 0.95rem; }
 
         .highlight-box {
-            background: rgba(124, 58, 237, 0.05);
+            background: rgba(167, 139, 250, 0.06);
             border-left: 4px solid var(--accent-purple);
             padding: 22px;
             margin: 35px 0;
             border-radius: 0 12px 12px 0;
-            color: #4c1d95;
+            color: #ddd6fe;
             font-size: 1rem;
         }
 
         code {
-            background-color: #f1f5f9;
-            color: var(--accent-red);
+            background-color: #1e293b;
+            color: #fca5a5;
             padding: 2px 6px;
             border-radius: 4px;
             font-family: 'Courier New', Courier, monospace;
             font-size: 0.9rem;
-            border: 1px solid #e2e8f0;
+            border: 1px solid var(--border-color);
         }
 
+        /* Blocos de Vantagem */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -351,29 +367,35 @@
         }
 
         .feature-block {
-            background: #f8fafc;
+            background: rgba(15, 23, 42, 0.3);
             border: 1px solid var(--border-color);
             padding: 25px;
             border-radius: 12px;
             transition: border-color 0.2s ease;
         }
         .feature-block:hover {
-            border-color: #cbd5e1;
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
         }
 
         .feature-title {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 1.1rem;
             font-weight: 600;
-            color: #0f172a;
+            color: #ffffff;
             margin-bottom: 10px;
         }
 
+        /* Linha do Tempo Dark */
         .timeline {
             position: relative;
             margin: 40px 0 20px 10px;
             padding-left: 25px;
-            border-left: 2px solid #e2e8f0;
+            border-left: 2px solid #1e293b;
         }
 
         .timeline-item {
@@ -393,7 +415,7 @@
             width: 12px;
             height: 12px;
             border-radius: 50%;
-            background-color: #ffffff;
+            background-color: var(--bg-card);
             border: 2px solid var(--accent-cyan);
         }
 
@@ -407,26 +429,26 @@
         }
 
         .timeline-title {
-            color: #0f172a;
+            color: #ffffff;
             font-weight: 600;
             font-size: 1.05rem;
             margin-bottom: 6px;
         }
 
         /* ==========================================
-           CORREÇÃO CRÍTICA DO ALINHAMENTO DOS INTEGRANTES
+           BLOCO DOS INTEGRANTES - 100% CENTRALIZADO E DARK
            ========================================== */
         .group-section {
             display: flex;
             flex-direction: column;
-            align-items: center;    /* Centraliza os filhos na horizontal */
+            align-items: center;    
             justify-content: center;
             text-align: center;
             border-top: 1px solid var(--border-color);
             padding-top: 35px;
             margin: 50px auto 10px auto;
             width: 100%;
-            max-width: 1000px;      /* Restringe área externa para evitar quebras tortas */
+            max-width: 1000px;      
         }
 
         .group-title {
@@ -442,12 +464,12 @@
         .student-list {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center; /* Centraliza itens internos se houver quebra de linha */
+            justify-content: center; 
             align-items: center;
             gap: 16px;
             list-style: none;
             padding: 0;
-            margin: 0 auto;         /* Garante centralização perfeita da caixa da lista */
+            margin: 0 auto;         
             width: 100%;
         }
 
@@ -457,13 +479,13 @@
             padding: 10px 22px;
             border-radius: 30px;
             font-size: 0.95rem;
-            color: var(--text-main);
+            color: #ffffff;
             font-weight: 500;
-            display: inline-flex;  /* Evita esticamentos fantasmas de bloco */
+            display: inline-flex;  
             align-items: center;
             gap: 8px;
-            margin: 0;             /* Remove qualquer margin residual do reset */
-            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+            margin: 0;             
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
 
         .student-list li i {
@@ -472,9 +494,9 @@
 
         .class-badge {
             display: inline-block;
-            background: rgba(124, 58, 237, 0.08);
+            background: rgba(167, 139, 250, 0.1);
             color: var(--accent-purple);
-            border: 1px solid rgba(124, 58, 237, 0.15);
+            border: 1px solid rgba(167, 139, 250, 0.2);
             padding: 5px 18px;
             border-radius: 20px;
             font-weight: 600;
@@ -482,15 +504,16 @@
             margin: 25px auto 0 auto;
         }
 
+        /* Footer Sólido */
         footer {
             flex-shrink: 0;
-            background-color: #0f172a;
-            color: #94a3b8;
+            background-color: #020617;
+            color: #64748b;
             padding: 30px 20px;
             text-align: center;
             width: 100%;
             font-size: 0.9rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid var(--border-color);
         }
 
         @media (max-width: 768px) {
@@ -630,7 +653,7 @@
                 </div>
                 <div class="card">
                     <h4><i class="fa-solid fa-handshake" style="color: var(--accent-cyan);"></i> Conexão Instantânea (0-RTT)</h4>
-                    <p>O QUIC unifica as validações de transporte e criptografia (TLS) in um único passo. Usuários recorrentes conectam-se sem perda de tempo.</p>
+                    <p>O QUIC unifica as validações de transporte e criptografia (TLS) em um único passo. Usuários recorrentes conectam-se sem perda de tempo.</p>
                 </div>
                 <div class="card">
                     <h4><i class="fa-solid fa-mobile-screen-button" style="color: var(--accent-purple);"></i> Migração de Rede Fluida</h4>
